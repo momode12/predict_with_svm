@@ -25,13 +25,13 @@ def one_hot(word):
     vector[word_to_index[word]] = 1
     return vector
 X = np.array([one_hot(w) for w in mots])
-print("X: ", X)
+# print("X: ", X)
 ###############################
 ###### ECNODAGE DE Y ##########
 ###############################
 classements=["vetement", "cuisine", "cuisine", "vetement", "cuisine", "vetement", "cuisine", "vetement"]
 Y = np.array([1 if cl == 'cuisine' else -1 for cl in classements])
-print("Y: ", Y)
+# print("Y: ", Y)
 ###############################
 ### INITIALISATION SVM ########
 ###############################

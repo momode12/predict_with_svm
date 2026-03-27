@@ -6,7 +6,7 @@ from temporalio.worker.workflow_sandbox import (
     SandboxRestrictions,
 )
 from workflow import SVMPredictWorkflow
-from activities import predict_activity, perf_number_activity, perf_graph_activity
+from activity import predict_activity, perf_number_activity, perf_graph_activity
 
 async def main():
     print("Connexion au Temporal Server...")

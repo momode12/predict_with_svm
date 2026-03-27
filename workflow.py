@@ -1,6 +1,6 @@
 from temporalio import workflow
 from datetime import timedelta
-from activities import predict_activity, perf_number_activity, perf_graph_activity
+from activity import predict_activity, perf_number_activity, perf_graph_activity
 
 @workflow.defn
 class SVMPredictWorkflow:
