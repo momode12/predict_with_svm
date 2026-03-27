@@ -6,16 +6,15 @@ from temporalio.worker.workflow_sandbox import (
     SandboxRestrictions,
 )
 from workflow import SVMPredictWorkflow
-from activity import predict_activity, perf_number_activity, perf_graph_activity
+from activities import predict_activity, perf_number_activity, perf_graph_activity
 
 async def main():
-    print("Connexion au Temporal Server...")
     client = await Client.connect("localhost:7233")
     print("Connecté !")
 
     worker = Worker(
         client,
-        task_queue="svm-queue",
+        task_queue="ml-task-queue", # nom de l'worker
         workflows=[SVMPredictWorkflow],
         activities=[predict_activity, perf_number_activity, perf_graph_activity],
         workflow_runner=SandboxedWorkflowRunner(
